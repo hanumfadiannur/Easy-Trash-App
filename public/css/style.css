@@ -1,0 +1,194 @@
+:root {
+    --font-family-poppins: 'Poppins', sans-serif;
+}
+
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: var(--font-family-poppins);
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    justify-content: flex-end; /* Mengatur konten ke kanan */
+    align-items: flex-start; /* Mengatur konten ke atas */
+    height: 100vh;
+    padding-right: 20px; /* Ruang di sebelah kanan */
+    position: relative;
+}
+
+
+.page-signup-user-1 {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Lebar maksimum lebih kecil */
+    margin-top: 180px; /* Mengatur jarak dari atas */
+
+}
+
+
+.text-3 {
+    font-size: 20px; /* Ukuran font judul lebih kecil */
+    font-weight: bold;
+    color: #233B45;
+    margin-bottom: 10px;
+}
+
+.text-2 {
+    font-size: 24px; /* Ukuran font judul lebih kecil */
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 70px;
+    margin-left: 20px;
+}
+
+.rectangle {
+    position: absolute; /* Tetap di sini */
+    left: 0; /* Pastikan rectangle mengisi lebar dari kiri */
+    margin-top: 80px;
+    width: 100%; /* Lebar penuh */
+    height: 130px; /* Tinggi rectangle */
+    background-color: rgba(78, 175, 91, 1); /* Warna rectangle */
+    border-radius: 15px; /* Sudut melingkar */
+    z-index: 1; /* Agar rectangle selalu di atas elemen lain */
+}
+
+.ellipse-blue-1-4 {
+    position: absolute;
+    left: 80%; /* Menggunakan persentase untuk responsivitas */
+    top: 30%;  /* Menentukan posisi vertikal */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Memusatkan elemen */
+}
+
+.ellipse-blue-2-6 {
+    position: absolute;
+    left: 60%; /* Menggunakan persentase untuk responsivitas */
+    top: 70%;  /* Menentukan posisi vertikal */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Memusatkan elemen */
+}
+
+.ellipse-blue-3-5 {
+    position: absolute;
+    left: 40%; /* Menggunakan persentase untuk responsivitas */
+    top: 30%;  /* Menentukan posisi vertikal */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Memusatkan elemen */
+}
+
+.ellipse-green-1-4 {
+    position: absolute;
+    left: 80%; /* Menggunakan persentase untuk responsivitas */
+    top: 30%;  /* Menentukan posisi vertikal */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Memusatkan elemen */
+}
+
+.ellipse-green-2-6 {
+    position: absolute;
+    left: 60%; /* Menggunakan persentase untuk responsivitas */
+    top: 70%;  /* Menentukan posisi vertikal */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Memusatkan elemen */
+}
+
+.ellipse-green-3-5 {
+    position: absolute;
+    left: 40%; /* Menggunakan persentase untuk responsivitas */
+    top: 30%;  /* Menentukan posisi vertikal */
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%); /* Memusatkan elemen */
+}
+
+.trash {
+    position: absolute;
+    left: 5%; /* Mengatur jarak dari sisi kiri */
+    top: calc(169px + 2vw); /* Menempatkan di bawah rectangle */
+    width: 8%; /* Mengatur lebar gambar menjadi 8% dari lebar jendela */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    max-width: 50px; /* Batas maksimum lebar gambar */
+}
+
+.container {
+    display: flex; /* Menggunakan Flexbox untuk penyelarasan */
+    align-items: center; /* Pusatkan elemen secara vertikal */
+    justify-content: flex-start; /* Memindahkan elemen ke kiri */
+    height: 100vh; /* Tinggi kontainer sesuai tinggi jendela */
+    padding-left: 20px; /* Menambahkan padding kiri jika perlu untuk memberi jarak dari tepi */
+}
+
+.trashLogo {
+    width: 80%; /* Mengatur lebar gambar menjadi 80% dari lebar kontainer */
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+    max-width: 350px; /* Batas maksimum lebar gambar */
+    margin-right: 50px; /* Jarak di sebelah kanan gambar */
+}
+
+.trashText {
+    width: auto; /* Mengatur lebar teks menjadi otomatis */
+    max-width: 350px; /* Batas maksimum lebar teks */
+    align-items: center;
+    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
+}
+
+
+
+.form-container {
+    background-color: rgba(218, 252, 218, 1); /* Warna latar belakang form */
+    border-radius: 15px; /* Sudut melingkar */
+    padding: 15px; /* Padding di dalam form */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk form */
+    margin-top: 100px; /* Jarak antara rectangle dan form */
+    margin-right: 20px;
+    margin-bottom: 20px;
+    z-index: 0; /* Agar form berada di bawah rectangle */
+}
+
+.form-group {
+    margin-bottom: 5px; /* Jarak antar grup input lebih kecil */
+}
+
+label {
+    display: block;
+    margin-bottom: 2px; /* Jarak label lebih kecil */
+}
+
+input {
+    width: 100%;
+    padding: 4px; /* Mengurangi padding di dalam input */
+    border: 1px solid rgba(35, 59, 69, 1);
+    border-radius: 5px;
+    font-size: 12px; /* Ukuran font input lebih kecil */
+}
+
+.invalid-feedback {
+    color: red;
+    font-size: 10px; /* Ukuran font feedback lebih kecil */
+}
+
+/* Button styles */
+.submit-btn {
+    width: 100%;
+    padding: 6px; /* Mengurangi padding button */
+    background-color: rgba(35, 59, 69, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px; /* Ukuran font button lebih kecil */
+}
+
+.submit-btn:hover {
+    background-color: rgba(50, 70, 80, 1);
+}

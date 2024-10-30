@@ -7,6 +7,12 @@
     <title>Sign Up</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- Link CSS untuk Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Link JS untuk Leaflet -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 </head>
 
 <body>
@@ -71,6 +77,17 @@
                     @enderror
                 </div>
 
+                <div>
+                    <label for="location">Lokasi:</label>
+                    <input type="text" id="location" name="location" required readonly>
+                    <input type="hidden" id="latitude" name="latitude" value="">
+                    <input type="hidden" id="longitude" name="longitude" value="">
+
+                </div>
+
+                <!-- Tempat untuk menampilkan peta -->
+                <div id="map" style="height: 400px;"></div>
+
                 <!-- Password Field -->
                 <div class="form-group">
                     <label for="password">Password</label>
@@ -95,6 +112,54 @@
                 <button type="submit" class="submit-btn">Sign Up</button>
             </form>
         </div>
+        <script>
+            // Inisialisasi peta
+            var map = L.map('map').setView([-6.9175, 107.6191], 13); // Koordinat awal (Bandung)
+
+            // Menambahkan layer peta
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            var marker;
+
+            // Fungsi untuk mendapatkan alamat dari koordinat
+            function getAddressFromLatLng(lat, lng) {
+                var url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`;
+
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data && data.display_name) {
+                            document.getElementById('location').value = data.display_name; // Simpan alamat ke input
+                            document.getElementById('latitude').value = lat; // Simpan latitude ke input tersembunyi
+                            document.getElementById('longitude').value = lng; // Simpan longitude ke input tersembunyi
+                        }
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+
+
+            // Fungsi untuk menangani klik pada peta
+            map.on('click', function(e) {
+                var lat = e.latlng.lat;
+                var lng = e.latlng.lng;
+
+                // Menghapus marker sebelumnya
+                if (marker) {
+                    map.removeLayer(marker);
+                }
+
+                // Menambahkan marker baru
+                marker = L.marker([lat, lng]).addTo(map);
+
+                // Mendapatkan alamat dari koordinat
+                getAddressFromLatLng(lat, lng);
+            });
+        </script>
+
+
 </body>
 
 </html>

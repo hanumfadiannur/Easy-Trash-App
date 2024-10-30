@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Recycling Page
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .hover-grow:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s;
+        }
+
+        .hover-move:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <header class="bg-green-600 p-4 flex justify-between items-center shadow-md">
+        <div class="text-white">
+            <i class="fas fa-bars text-2xl">
+            </i>
+        </div>
+        <nav class="flex space-x-4">
+            <a class="text-white font-bold hover:text-gray-300 transition-colors" href="#">
+                Home
+            </a>
+            <a class="text-white font-bold hover:text-gray-300 transition-colors" href="#">
+                About
+            </a>
+        </nav>
+    </header>
+    <main class="p-8">
+        <h1 class="text-3xl font-bold text-green-700">
+            Hi, Amira Setyani
+        </h1>
+        <h2 class="text-2xl font-bold text-gray-800 mt-2">
+            Sampah yang dapat didaur ulang
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
+                <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
+                    <img alt="Image of plastic bottles" class="hover-grow" height="64"
+                        src="https://storage.googleapis.com/a1aa/image/wqFoBZGEuYLdJtmffvxZ2Ieh4ufBRlGCtRwB9OlKRK73FNtOB.jpg"
+                        width="64" />
+                </div>
+                <h3 class="text-xl font-bold mt-4">
+                    Plastik
+                </h3>
+                <p class="text-gray-600 mt-2">
+                    Plastik adalah salah satu jenis sampah yang paling umum. Beberapa plastik bisa didaur ulang, seperti
+                    botol minuman plastik (PET).
+                </p>
+            </div>
+            <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
+                <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
+                    <img alt="Image of glass bottle" class="hover-grow" height="64"
+                        src="https://storage.googleapis.com/a1aa/image/hByqzgBUBFpmEl1m6y9fksPtyBiHATF7jFxjluY4R7Fwop1JA.jpg"
+                        width="64" />
+                </div>
+                <h3 class="text-xl font-bold mt-4">
+                    Kaca
+                </h3>
+                <p class="text-gray-600 mt-2">
+                    Botol kaca, toples, dan jenis kaca lainnya juga bisa didaur ulang. Proses daur ulang kaca dapat
+                    menghasilkan produk kaca baru tanpa kehilangan kualitas.
+                </p>
+            </div>
+            <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
+                <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
+                    <img alt="Image of paper" class="hover-grow" height="64"
+                        src="https://storage.googleapis.com/a1aa/image/KsesrhCe9vseeS6bTJp3MmhTQriyC8PREfgBVyopVtLWMaadC.jpg"
+                        width="64" />
+                </div>
+                <h3 class="text-xl font-bold mt-4">
+                    Kertas
+                </h3>
+                <p class="text-gray-600 mt-2">
+                    Kertas yang bisa didaur ulang meliputi kertas biasa, koran, majalah, dan kardus. Dengan mendaur
+                    ulang kertas, kita dapat mengurangi penebangan pohon untuk produksi kertas baru.
+                </p>
+            </div>
+        </div>
+        <div class="mt-8 text-center">
+            <p class="bg-gray-200 text-red-600 p-2 rounded-md inline-block">
+                Sebelum mendaur ulang, pastikan sudah input lokasi
+            </p>
+        </div>
+        <div class="mt-4 text-center">
+            <button
+                class="bg-green-600 text-white py-2 px-8 rounded-full text-lg hover:bg-green-700 transition-colors shadow-md">
+                Recycling
+            </button>
+        </div>
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800">
+                Mengapa Daur Ulang Penting?
+            </h2>
+            <p class="text-gray-600 mt-4">
+                Daur ulang membantu mengurangi jumlah sampah yang berakhir di tempat pembuangan akhir, mengurangi
+                polusi, dan menghemat sumber daya alam. Dengan mendaur ulang, kita juga dapat mengurangi emisi gas rumah
+                kaca dan membantu melindungi lingkungan.
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Mengurangi Polusi
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Daur ulang membantu mengurangi polusi udara dan air dengan mengurangi kebutuhan untuk
+                        mengumpulkan bahan mentah baru.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Menghemat Energi
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Proses daur ulang biasanya menggunakan lebih sedikit energi dibandingkan dengan membuat produk
+                        baru dari bahan mentah.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Melindungi Ekosistem
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Dengan mengurangi kebutuhan untuk menambang dan menebang, daur ulang membantu melindungi habitat
+                        alami dan keanekaragaman hayati.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Mengurangi Emisi Gas Rumah Kaca
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Daur ulang membantu mengurangi emisi gas rumah kaca yang berkontribusi terhadap perubahan iklim.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="mt-12">
+            <h2 class="text-2xl font-bold text-gray-800">
+                Cara Mendaur Ulang dengan Benar
+            </h2>
+            <p class="text-gray-600 mt-4">
+                Mendaur ulang dengan benar sangat penting untuk memastikan bahwa bahan-bahan yang didaur ulang dapat
+                digunakan kembali dengan efektif. Berikut adalah beberapa tips untuk mendaur ulang dengan benar:
+            </p>
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Pisahkan Sampah
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Pisahkan sampah berdasarkan jenisnya, seperti plastik, kaca, kertas, dan logam. Ini akan
+                        memudahkan proses daur ulang.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Bersihkan Sampah
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Pastikan sampah yang akan didaur ulang dalam keadaan bersih. Cuci botol dan wadah makanan
+                        sebelum memasukkannya ke tempat daur ulang.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Gunakan Tempat Sampah yang Tepat
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Gunakan tempat sampah yang telah disediakan untuk masing-masing jenis sampah. Ini akan
+                        membantu proses daur ulang berjalan lebih efisien.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg hover-move">
+                    <h3 class="text-xl font-bold text-green-700">
+                        Kurangi Penggunaan Plastik
+                    </h3>
+                    <p class="text-gray-600 mt-2">
+                        Kurangi penggunaan plastik sekali pakai dan beralih ke alternatif yang lebih ramah lingkungan,
+                        seperti tas belanja kain dan botol minum yang dapat digunakan kembali.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-green-600 p-4 mt-12 text-white text-center">
+        <p>
+            © 2023 Recycling Initiative. All rights reserved.
+        </p>
+        <div class="mt-2">
+            <a class="text-white hover:text-gray-300 transition-colors mx-2" href="#">
+                <i class="fab fa-facebook-f">
+                </i>
+            </a>
+            <a class="text-white hover:text-gray-300 transition-colors mx-2" href="#">
+                <i class="fab fa-twitter">
+                </i>
+            </a>
+            <a class="text-white hover:text-gray-300 transition-colors mx-2" href="#">
+                <i class="fab fa-instagram">
+                </i>
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

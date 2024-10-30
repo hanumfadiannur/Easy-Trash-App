@@ -193,3 +193,70 @@ input {
     background-color: rgba(50, 70, 80, 1);
 }
 
+.frame-3-4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 25px 30px;
+    flex-grow: 0;
+    width: 40%;
+    background-color: rgba(78, 175, 91, 1);
+    border-radius: 20px;
+    position: relative;
+}
+
+.frame-6-5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 25px 30px;
+    flex-grow: 0;
+    width: 40%;
+    background-color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(78, 175, 91, 1);
+    border-radius: 20px;
+    position: relative;
+}
+
+
+.text-6 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 495px;
+    height: 59px;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    color: rgba(52, 159, 66, 1);
+}
+
+.text-7 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 59px;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 60%;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30%;
+}
+

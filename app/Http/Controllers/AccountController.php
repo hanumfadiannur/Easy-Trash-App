@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
@@ -15,6 +16,16 @@ class AccountController extends Controller
     public function loading()
     {
         return view('start');
+    }
+
+    public function homeUser()
+    {
+        return view('home.homeUser');
+    }
+
+    public function homeRO()
+    {
+        return view('home.homeRO');
     }
 
     public function register()
@@ -112,16 +123,14 @@ class AccountController extends Controller
     // update user profile
     public function updateProfile(Request $request)
     {
+
         $rules = [
             'name' => 'required|min:3',
             'email' => 'required|email|unique:users,email,' . Auth::user()->id . ',id',
             'phonenumber' => 'required',
-            'role' => 'required|in:user,recycleorg',
             'location' => 'required', // Validasi lokasi
 
         ];
-
-
 
         $validator = Validator::make($request->all(), $rules);
 
@@ -133,44 +142,52 @@ class AccountController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->phonenumber = $request->phonenumber;
-        $user->role = $request->role;
         $user->location = $request->location;
         $user->save();
+
 
         $latitude = $request->latitude; // Ambil latitude dari input tersembunyi
         $longitude = $request->longitude; // Ambil longitude dari input tersembunyi
 
         if ($user->role === 'user') {
-            MapsUser::create([
-                'user_id' => $user->id,
-                'address' => $request->location, // Simpan alamat
-                'latitude' => $latitude,
-                'longitude' => $longitude,
-            ]);
+            // Cari data yang sudah ada berdasarkan user_id
+            $mapsUser = MapsUser::where('user_id', $user->id)->first();
+
+            if ($mapsUser) {
+                // Jika entri ditemukan, perbarui data
+                $mapsUser->address = $request->location;
+                $mapsUser->latitude = $latitude;
+                $mapsUser->longitude = $longitude;
+                $mapsUser->save();
+            } else {
+                // Jika entri tidak ditemukan, buat baru
+                MapsUser::create([
+                    'user_id' => $user->id,
+                    'address' => $request->location,
+                    'latitude' => $latitude,
+                    'longitude' => $longitude,
+                ]);
+            }
         } elseif ($user->role === 'recycleorg') {
-            MapsRecycleOrg::create([
-                'user_id' => $user->id,
-                'address' => $request->location, // Simpan alamat
-                'latitude' => $latitude,
-                'longitude' => $longitude,
-            ]);
+            // Cari data yang sudah ada berdasarkan user_id
+            $mapsRecycleOrg = MapsRecycleOrg::where('user_id', $user->id)->first();
+
+            if ($mapsRecycleOrg) {
+                // Jika entri ditemukan, perbarui data
+                $mapsRecycleOrg->address = $request->location;
+                $mapsRecycleOrg->latitude = $latitude;
+                $mapsRecycleOrg->longitude = $longitude;
+                $mapsRecycleOrg->save();
+            } else {
+                // Jika entri tidak ditemukan, buat baru
+                MapsRecycleOrg::create([
+                    'user_id' => $user->id,
+                    'address' => $request->location,
+                    'latitude' => $latitude,
+                    'longitude' => $longitude,
+                ]);
+            }
         }
-
-
-        // // upload image
-        // if (!empty($request->image)) {
-
-        //     // delete old image
-        //     File::delete(public_path('uploads/profile/' . $user->image));
-        //     File::delete(public_path('uploads/profile/thumb/' . $user->image));
-
-        //     $image = $request->image;
-        //     $ext = $image->getClientOriginalExtension();
-        //     $imageName = time() . '.' . $ext;
-        //     $image->move(public_path('uploads/profile'), $imageName);
-        //     $user->image = $imageName;
-        //     $user->save();
-        // }
 
         return redirect()->route('account.profile')->with('success', 'Profile updated successfully');
     }

@@ -1,42 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>
-        Recycling Page
-    </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <style>
-        .hover-grow:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s;
-        }
-
-        .hover-move:hover {
-            transform: translateY(-10px);
-            transition: transform 0.3s;
-        }
-    </style>
-</head>
-
-<body class="bg-gray-100">
-    <header class="bg-green-600 p-4 flex justify-between items-center shadow-md">
-        <div class="text-white">
-            <i class="fas fa-bars text-2xl">
-            </i>
-        </div>
-        <nav class="flex space-x-4">
-            <a class="text-white font-bold hover:text-gray-300 transition-colors" href="#">
-                Home
-            </a>
-            <a class="text-white font-bold hover:text-gray-300 transition-colors" href="#">
-                About
-            </a>
-        </nav>
-    </header>
+@section('content')
     <main class="p-8">
         <h1 class="text-3xl font-bold text-green-700">
             Hi, Amira Setyani
@@ -213,6 +177,4 @@
             </a>
         </div>
     </footer>
-</body>
-
-</html>
+@endsection

@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recycling Organizations</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-</head>
-
-<body>
-    <nav class="navbar">
-        <div class="menu-icon">☰</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">About</a>
-        </div>
-    </nav>
-
+@section('content')
     <div class="search-container">
         <div class="search-box">
             <input type="text" class="search-input" placeholder="Pilih titik awal...">
@@ -64,6 +48,5 @@
     </div>
 
     <button class="back-button">←</button>
-</body>
-
-</html>
+    </body>
+@endsection

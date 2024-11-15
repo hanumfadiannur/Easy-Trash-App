@@ -2,8 +2,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
+
+
+.header-text {
+    font-size: 20px; /* Mengatur ukuran font */
+}
+.custom-header-bg {
+    background-color: rgba(78, 175, 91, 1); /* Mengatur warna latar belakang */
+}
+
 
 .navbar {
   background-color: rgba(78, 175, 91, 1);
@@ -11,6 +20,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .menu-icon {

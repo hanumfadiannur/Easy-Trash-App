@@ -8,6 +8,11 @@ Route::get('/', function () {
     return view('start');
 });
 
+
+
+Route::get('/homeUser', [AccountController::class, 'homeUser'])->name('home.homeUser');;
+Route::get('/homeRO', [AccountController::class, 'homeRO'])->name('home.homeRO');;
+
 Route::get('/map', [MapController::class, 'index']);
 Route::get('/maps', [MapController::class, 'index2']);
 Route::get('/form', [MapController::class, 'showForm'])->name('show.form');

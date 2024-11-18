@@ -3,17 +3,16 @@
 @section('content')
     <main class="p-8">
         <h1 class="text-3xl font-bold text-green-700">
-            Hi, Amira Setyani
+            Hi, {{ $user->name }}
         </h1>
         <h2 class="text-2xl font-bold text-gray-800 mt-2">
             Sampah yang dapat didaur ulang
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-8">
             <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
                 <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
                     <img alt="Image of plastic bottles" class="hover-grow" height="64"
-                        src="https://storage.googleapis.com/a1aa/image/wqFoBZGEuYLdJtmffvxZ2Ieh4ufBRlGCtRwB9OlKRK73FNtOB.jpg"
-                        width="64" />
+                        src="{{ asset('images/botolPlastik.svg') }}" width="180" />
                 </div>
                 <h3 class="text-xl font-bold mt-4">
                     Plastik
@@ -26,8 +25,7 @@
             <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
                 <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
                     <img alt="Image of glass bottle" class="hover-grow" height="64"
-                        src="https://storage.googleapis.com/a1aa/image/hByqzgBUBFpmEl1m6y9fksPtyBiHATF7jFxjluY4R7Fwop1JA.jpg"
-                        width="64" />
+                        src="{{ asset('images/botolKaca.svg') }}" width="32" />
                 </div>
                 <h3 class="text-xl font-bold mt-4">
                     Kaca
@@ -39,29 +37,42 @@
             </div>
             <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
                 <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
-                    <img alt="Image of paper" class="hover-grow" height="64"
-                        src="https://storage.googleapis.com/a1aa/image/KsesrhCe9vseeS6bTJp3MmhTQriyC8PREfgBVyopVtLWMaadC.jpg"
-                        width="64" />
+                    <img alt="Image of paper" class="hover-grow" height="64" src="{{ asset('images/kertas.svg') }}"
+                        width="70" />
                 </div>
                 <h3 class="text-xl font-bold mt-4">
                     Kertas
                 </h3>
                 <p class="text-gray-600 mt-2">
-                    Kertas yang bisa didaur ulang meliputi kertas biasa, koran, majalah, dan kardus. Dengan mendaur
-                    ulang kertas, kita dapat mengurangi penebangan pohon untuk produksi kertas baru.
+                    Kertas yang dapat didaur ulang, seperti koran, majalah, dan kardus, membantu mengurangi penebangan pohon
+                    untuk produksi kertas baru.
+                </p>
+            </div>
+            <div class="text-center hover-grow hover-move shadow-lg p-6 rounded-lg bg-white">
+                <div class="bg-blue-100 rounded-full w-32 h-32 mx-auto flex items-center justify-center">
+                    <img alt="Image of paper" class="hover-grow" height="64" src="{{ asset('images/kaleng.svg') }}"
+                        width="64" />
+                </div>
+                <h3 class="text-xl font-bold mt-4">
+                    Kaleng
+                </h3>
+                <p class="text-gray-600 mt-2">
+                    Kaleng yang dapat didaur ulang, seperti kaleng aluminium dan minuman, membantu mengurangi sampah dan
+                    penggunaan energi dalam pembuatan kaleng baru.
                 </p>
             </div>
         </div>
         <div class="mt-8 text-center">
             <p class="bg-gray-200 text-red-600 p-2 rounded-md inline-block">
-                Sebelum mendaur ulang, pastikan sudah input lokasi
+                Pastikan input lokasi!
             </p>
         </div>
         <div class="mt-4 text-center">
-            <button
+            <a href="{{ route('maps') }}"
                 class="bg-green-600 text-white py-2 px-8 rounded-full text-lg hover:bg-green-700 transition-colors shadow-md">
                 Recycling
-            </button>
+            </a>
+
         </div>
         <section class="mt-12">
             <h2 class="text-2xl font-bold text-gray-800">

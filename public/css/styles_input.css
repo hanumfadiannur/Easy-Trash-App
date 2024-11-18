@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container2 {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 0;
+}
+
+h2 {
+    font-size: 32px !important;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.card {
+    background-color: #D8EBBF;
+    border-radius: 20px;
+    padding: 70px;
+    width: 700px;
+}
+
+
+.input-container {
+    background-color: #A4F3A4;
+    border-radius: 8px;
+    padding: 20px;
+    z-index: -1;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.value {
+    font-weight: bold;
+    width: 30px;
+    text-align: center;
+
+    margin: 5px auto;
+
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid #a5d6a7;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.send-btn {
+    background-color: #4EAF5B;
+    color: white;
+    border: none;
+    padding: 10px 100px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    float: right;
+}
+
+.send-btn:hover {
+    background-color: #388E3C;
+}
+
+

@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Easy Trash</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
-    <!-- Link CSS for Leaflet -->
+    <link rel="stylesheet" href="{{ asset('css/trash2.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <!-- Link JS for Leaflet -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     @yield('style')
     <style>
@@ -38,17 +42,19 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
+    @yield('script')
     <script>
-        document.getElementById('edit-btn').addEventListener('click', function() {
-            let inputs = document.querySelectorAll('input[disabled]');
-            inputs.forEach(input => input.disabled = false);
-
-            // Sembunyikan tombol Edit dan tampilkan tombol Save
-            document.getElementById('edit-btn').style.display = 'none';
-            document.querySelector('.btn-save').style.display = 'inline-block';
-        });
+        document.getElementById("menu-icon-close").onclick = function() {
+            document.getElementById("menu").style.display = "block";
+        };
+        document.getElementById("menu-icon-open").onclick = function() {
+            document.getElementById("menu").style.display = "none";
+        };
+        document.getElementById("menu-background").onclick = function() {
+            document.getElementById("menu").style.display = "none";
+        }
     </script>
-    <script>
+    {{-- <script>
         // Initialize the map
         var map = L.map('map').setView([-6.9175, 107.6191], 13); // Fallback initial coordinates (Bandung)
 
@@ -88,7 +94,9 @@
             }
 
             // Add a new marker
-            marker = L.marker([lat, lng]).addTo(map);
+            marker = L.marker([lat, lng], {
+                draggable: "true",
+            }).addTo(map);
 
             // Get address from coordinates
             getAddressFromLatLng(lat, lng);
@@ -102,12 +110,16 @@
             map.setView([currentLat, currentLng], 13);
 
             // Add a marker for the user's location
-            marker = L.marker([currentLat, currentLng]).addTo(map);
+            marker = L.marker([currentLat, currentLng], {
+                draggable: "true",
+            }).addTo(map);
 
             // Get address from user's coordinates
             getAddressFromLatLng(currentLat, currentLng);
         }
-    </script>
+    </script> --}}
+
+
 
 
 </body>

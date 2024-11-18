@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- Link CSS untuk Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-
     <!-- Link JS untuk Leaflet -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 

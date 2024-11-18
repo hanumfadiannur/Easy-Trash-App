@@ -44,4 +44,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // Relasi ke tabel maps_user
+    public function mapsUser()
+    {
+        return $this->hasOne(MapsUser::class, 'user_id');
+    }
+
+    // Relasi ke tabel maps_recycleorg
+    public function mapsRecycleOrg()
+    {
+        return $this->hasOne(MapsRecycleOrg::class, 'user_id');
+    }
 }

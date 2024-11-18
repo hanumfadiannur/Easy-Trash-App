@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #fff;
+    color: #232323;
+}
+
+header {
+    display: flex !important;
+    align-items: center;
+    padding: 16px 32px !important;
+}
+
+.header-main {
+    background-color: #349f42;
+    justify-content: space-between !important;
+}
+
+.menu-icon {
+    display: flex;
+    height: 32px;
+    width: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#menu-icon-close {
+    background-color: #8fe492;
+    color: #349f42;
+}
+
+#menu-icon-open {
+    background-color: #349f42;
+    color: #f7fcf0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fefffe;
+    font-weight: bold;
+}
+
+/* Map dan Form */
+#map, .form-container {
+    position: relative; /* Pastikan berada di lapisan utama */
+    z-index: 1; /* Lebih rendah dibandingkan menu */
+}
+
+/* Menu dan Menu Background */
+#menu {
+    position: fixed; /* Tetap di atas semua elemen */
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 100; /* Di atas map dan form */
+    display: none; /* Default tersembunyi */
+}
+
+.logo-icon {
+    height: 7vh; /* Atur tinggi logo */
+    width: auto;  /* Biarkan lebar mengikuti rasio aspek */
+    margin-right: 160vh; /* Tambahkan ini jika ingin memaksa elemen lain ke kanan */
+}
+
+.menu-icon {
+    width: 30px;  /* Atur sesuai ukuran yang diinginkan */
+    height: 30px; /* Atur sesuai ukuran yang diinginkan */
+    margin-left: -5px;
+}
+
+#menu-background {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 99; /* Tepat di bawah menu */
+    display: none; /* Default tersembunyi */
+}
+
+.menu-container {
+    background-color: #f7fcf0;
+    height: 100vh;
+    width: 30vw;
+    z-index: 100; /* Sama dengan #menu untuk tampil di depan */
+}
+
+
+.menu-title {
+    margin-left: 32px;
+    font-weight: bold;
+}
+
+.menu-list {
+    width: 100%;
+    margin-top: 32px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #a4f3a4;
+    padding: 16px 32px;
+    margin: 8px 32px;
+    border-radius: 16px;
+    cursor: pointer;
+}
+
+.menu-item-text {
+    margin-left: 8px;
+}
+
+#logout {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: #E31937;
+    color: #f7fcf0;
+    padding: 8px 16px;
+    border-radius: 8px;
+    bottom: 16px;
+    left: 32px;
+    cursor: pointer;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+main {
+    padding: 48px;
+}
+
+.page-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #233b45;
+}
+
+.request-box {
+    background-color: #d8ebbf;
+    padding: 16px 32px 16px 32px;
+    border-radius: 16px;
+}
+
+.request-info {
+    margin-bottom: 32px;
+}
+
+.item-list {
+    width: 100%;
+    background-color: #adf1a9;
+    padding: 8px 16px;
+    border-radius: 16px;
+    font-weight: bold;
+}
+
+.item, .total {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.total {
+    border-top: 1px solid #232323;
+}
+
+/* Tombol Aksi */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.accept-btn,
+.reject-btn {
+    padding: 12px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Tombol Accept */
+.accept-btn {
+    background-color: #4eaf5b;
+}
+
+.accept-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/* Tombol Reject */
+.reject-btn {
+    background-color: #cf3636;
+}
+
+.reject-btn:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+

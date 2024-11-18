@@ -1,104 +1,7 @@
-.navbar {
-    background-color: #41af47; /*#41af47*/
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 .profile-section {
     flex: 1;
 }
 
-.profile-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-.profile-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between; /* This helps separate the main items from contact */
-}
-
-.nav-left {
-    display: flex; /* For the left-side menu items */
-}
-
-.nav-right {
-    display: flex; /* For the right-side menu items */
-}
-
-.nav-item {
-    position: relative;
-}
-
-.nav-item a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px 25px;
-    font-size: 16px;
-}
-
-.nav-item:hover > a {
-    background-color: #1b5e20; /* Darker green */
-}
-/* Hamburger menu styles */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    padding: 15px 25px;
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 2px 0;
-    transition: 0.4s;
-}
-
-/* Rotate bars when menu is active */
-.hamburger.active .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-/* Dropdown menu for hamburger */
-.hamburger-dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #4caf50;
-    min-width: 200px;
-    display: none;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.hamburger-dropdown.show {
-    display: block;
-}
 .main-content {
     padding: 20px;
     position: relative;
@@ -196,4 +99,8 @@
 .btn:disabled {
     background-color: #ccc;
     cursor: not-allowed;
+}
+
+.invalid-feedback {
+    color: red;  /* Mengubah warna teks pesan error menjadi merah */
 }

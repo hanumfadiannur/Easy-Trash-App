@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\TrashController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,7 +15,6 @@ Route::get('/homeUser', [AccountController::class, 'homeUser'])->name('home.home
 Route::get('/homeRO', [AccountController::class, 'homeRO'])->name('home.homeRO');;
 
 Route::get('/map', [MapController::class, 'index']);
-Route::get('/maps', [MapController::class, 'index2']);
 Route::get('/form', [MapController::class, 'showForm'])->name('show.form');
 Route::post('/get-distance', [MapController::class, 'getDistance'])->name('get.distance');
 Route::post('/calculate-distances', [MapController::class, 'calculateDistances'])->name('calculate.distances');
@@ -33,5 +33,9 @@ Route::group(['prefix' => 'account'], function () {
         Route::get('profile', [AccountController::class, 'profile'])->name('account.profile');
         Route::get('logout', [AccountController::class, 'logout'])->name('account.logout');
         Route::post('update-profile', [AccountController::class, 'updateProfile'])->name('account.updateProfile');
+        Route::get('/maps', [TrashController::class, 'locationRO'])->name('maps');
+        Route::post('/createwasterequest', [TrashController::class, 'createWasteRequest'])->name('createwasterequest');
+        Route::get('/input-weight', [TrashController::class, 'inputWeight'])->name('inputWeight');
+        Route::post('/waste/store', [TrashController::class, 'storeData'])->name('storeData');
     });
 });

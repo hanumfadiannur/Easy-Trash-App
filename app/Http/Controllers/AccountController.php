@@ -20,12 +20,18 @@ class AccountController extends Controller
 
     public function homeUser()
     {
-        return view('home.homeUser');
+        $user = User::find(Auth::user()->id);
+        return view('home.homeUser', [
+            'user' => $user
+        ]);
     }
 
     public function homeRO()
     {
-        return view('home.homeRO');
+        $user = User::find(Auth::user()->id);
+        return view('home.homeRO', [
+            'user' => $user
+        ]);
     }
 
     public function register()
@@ -102,8 +108,13 @@ class AccountController extends Controller
             return redirect()->route('account.login')->withInput()->withErrors($validator);
         }
 
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('account.profile');
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => $request->role])) {
+            $user = Auth::user(); // Mendapatkan user yang login
+            if ($user->role == 'recycleorg') {
+                return redirect()->route('home.homeRO');
+            } else {
+                return redirect()->route('home.homeUser'); // Mengarahkan ke halaman user biasa
+            }
         } else {
             return redirect()->route('account.login')->with('error', 'Either email or password is incorrect.');
         }
@@ -113,7 +124,7 @@ class AccountController extends Controller
     public function profile()
     {
         $user = User::find(Auth::user()->id);
-        $mapData = MapsUser::where('user_id', $user->id)->first();
+        $mapData = $user->role === 'user' ? $user->mapsUser : ($user->role === 'recycleorg' ? $user->mapsRecycleOrg : null);
         return view('account.profile', [
             'user' => $user,
             'mapData' => $mapData
@@ -146,48 +157,31 @@ class AccountController extends Controller
         $user->save();
 
 
+
         $latitude = $request->latitude; // Ambil latitude dari input tersembunyi
         $longitude = $request->longitude; // Ambil longitude dari input tersembunyi
 
+        // Determine the model and location data to update
         if ($user->role === 'user') {
-            // Cari data yang sudah ada berdasarkan user_id
-            $mapsUser = MapsUser::where('user_id', $user->id)->first();
-
-            if ($mapsUser) {
-                // Jika entri ditemukan, perbarui data
-                $mapsUser->address = $request->location;
-                $mapsUser->latitude = $latitude;
-                $mapsUser->longitude = $longitude;
-                $mapsUser->save();
-            } else {
-                // Jika entri tidak ditemukan, buat baru
-                MapsUser::create([
-                    'user_id' => $user->id,
+            $mapsUser = MapsUser::updateOrCreate(
+                ['user_id' => $user->id],
+                [
                     'address' => $request->location,
                     'latitude' => $latitude,
                     'longitude' => $longitude,
-                ]);
-            }
+                ]
+            );
         } elseif ($user->role === 'recycleorg') {
-            // Cari data yang sudah ada berdasarkan user_id
-            $mapsRecycleOrg = MapsRecycleOrg::where('user_id', $user->id)->first();
-
-            if ($mapsRecycleOrg) {
-                // Jika entri ditemukan, perbarui data
-                $mapsRecycleOrg->address = $request->location;
-                $mapsRecycleOrg->latitude = $latitude;
-                $mapsRecycleOrg->longitude = $longitude;
-                $mapsRecycleOrg->save();
-            } else {
-                // Jika entri tidak ditemukan, buat baru
-                MapsRecycleOrg::create([
-                    'user_id' => $user->id,
+            $mapsRecycleOrg = MapsRecycleOrg::updateOrCreate(
+                ['user_id' => $user->id],
+                [
                     'address' => $request->location,
                     'latitude' => $latitude,
                     'longitude' => $longitude,
-                ]);
-            }
+                ]
+            );
         }
+
 
         return redirect()->route('account.profile')->with('success', 'Profile updated successfully');
     }
@@ -197,6 +191,11 @@ class AccountController extends Controller
         Auth::logout();
         return redirect()->route('account.login');
     }
+
+
+
+
+
 
 
     // public function processRegister(Request $request)

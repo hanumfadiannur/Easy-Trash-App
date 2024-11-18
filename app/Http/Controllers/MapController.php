@@ -10,9 +10,9 @@ class MapController extends Controller
 {
 
 
-    public function index2()
-    {
-        $locations = Map::all();
-        return view('maps', compact('locations'));
-    }
+    // public function index2()
+    // {
+    //     $locations = Map::all();
+    //     return view('maps', compact('locations'));
+    // }
 }

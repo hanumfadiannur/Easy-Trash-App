@@ -21,6 +21,13 @@ header {
     justify-content: space-between !important;
 }
 
+
+.user-name {
+    font-size: 16px;
+    color: #333;
+    margin-right: auto;
+}
+
 .menu-icon {
     display: flex;
     height: 32px;
@@ -74,7 +81,8 @@ nav a {
 .logo-icon {
     height: 7vh; /* Atur tinggi logo */
     width: auto;  /* Biarkan lebar mengikuti rasio aspek */
-    margin-right: 160vh; /* Tambahkan ini jika ingin memaksa elemen lain ke kanan */
+    justify-content: center;
+
 }
 
 .menu-icon {
@@ -97,7 +105,7 @@ nav a {
 .menu-container {
     background-color: #f7fcf0;
     height: 100vh;
-    width: 30vw;
+    width: 50vb;
     z-index: 100; /* Sama dengan #menu untuk tampil di depan */
 }
 
@@ -117,7 +125,7 @@ nav a {
     align-items: center;
     background-color: #a4f3a4;
     padding: 16px 32px;
-    margin: 8px 32px;
+    margin: 1vh auto;
     border-radius: 16px;
     cursor: pointer;
 }
@@ -141,6 +149,40 @@ nav a {
 
 .container {
     margin: 0 auto;
+}
+
+main {
+    padding: 48px;
+}
+
+.container2 {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 32px  !important;
+    font-weight: bold !important;
+    margin-bottom: 20px !important;
+    color: #2c3e50;
+}
+
+.request-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #dff0d8;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: 100px;
+}
+
+.profile-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 main {
@@ -174,7 +216,7 @@ main {
 .item, .total {
     display: flex;
     justify-content: space-between;
-    padding: 8px 0;
+    padding: 10px 8px;
 }
 
 .total {
@@ -195,7 +237,6 @@ main {
     border: none;
     border-radius: 30px;
     font-size: 16px;
-    font-weight: bold;
     color: white;
     cursor: pointer;
     transition: transform 0.2s ease;
@@ -204,6 +245,7 @@ main {
 /* Tombol Accept */
 .accept-btn {
     background-color: #4eaf5b;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .accept-btn:hover {
@@ -214,10 +256,31 @@ main {
 /* Tombol Reject */
 .reject-btn {
     background-color: #cf3636;
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .reject-btn:hover {
     background-color: #e53935;
     transform: scale(1.05);
 }
+
+.show-button {
+    background-color: #98fb98;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    border: 2px solid rgb(34, 150, 53); /* Tambahkan border hitam */
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+.show-button:hover {
+    background-color: #59e060;
+}
+
 

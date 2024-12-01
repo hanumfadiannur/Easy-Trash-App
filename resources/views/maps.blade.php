@@ -3,8 +3,9 @@
 @section('style')
     <style>
         #map {
-            height: 590px;
-            width: 100%;
+            top: 2vh;
+            height: 80vh;
+            width: 200vw;
         }
 
         .organization-card.highlight {
@@ -17,8 +18,8 @@
         /* Next Button */
         .next-button {
             position: absolute;
-            right: 35px;
-            bottom: 5px;
+            right: 3vw;
+            bottom: 1vh;
             background-color: #4eaf5b;
             /* Warna latar belakang hijau */
             color: white;
@@ -28,6 +29,7 @@
             border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 2;
         }
 
         .next-button:hover {

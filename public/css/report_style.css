@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.report-navbar {
+    background-color: #349F42;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.report-navbar .report-nav-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.report-navbar .report-nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.report-container {
+    padding: 1.5rem;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.report-title {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.report-date {
+    color: #2c3e50;
+    font-size: 1.8rem !important;
+    margin: 1.5rem 0;
+    font-weight: bold;
+}
+
+.report-card {
+    background-color: #D8EBBF;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.report-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.report-total {
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.report-total span {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.report-destination {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.report-point-badge {
+    background-color: #98fb98;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.report-point-label {
+    padding: 0.5rem 2.3rem;
+    border-radius: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+.report-status {
+    text-align: center;
+}
+
+.report-status-badge {
+    padding: 0.5rem 2.3rem;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.report-status-pending {
+    background-color: #3498db;
+    color: white;
+}
+
+.report-status-accepted {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.report-status-rejected {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.report-status-done {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.report-show-request {
+    background-color: #98fb98;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    border: 1px solid black; /* Tambahkan border hitam */
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    border: 2px solid black;
+}
+
+
+.page-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+    color: #233b45;
+}
+
+.request-box {
+    background-color: #d8ebbf;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: 1rem;
+}
+
+.request-info {
+    margin-bottom: 1.5rem;
+}
+
+
+.item-list {
+    width: 100%;
+    background-color: #adf1a9;
+    padding: 1rem 2rem;
+    border-radius: 16px;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.item, .total {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0.5rem;
+}
+
+.total {
+    border-top: 1px solid #232323;
+}

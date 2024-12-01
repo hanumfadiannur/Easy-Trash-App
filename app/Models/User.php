@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'points',
     ];
 
     /**
@@ -55,5 +56,11 @@ class User extends Authenticatable
     public function mapsRecycleOrg()
     {
         return $this->hasOne(MapsRecycleOrg::class, 'user_id');
+    }
+
+    // Relasi ke RewardTransaction
+    public function rewardTransactions()
+    {
+        return $this->hasMany(RewardTransaction::class);
     }
 }

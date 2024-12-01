@@ -55,10 +55,17 @@ class TrashController extends Controller
     }
 
     public function inputWeight(Request $request)
-    {
+    { // Ambil ID permintaan dari query string
         $wasteRequestID = $request->query('wasteRequestID');
-        $categories = WasteCategory::all();  // Get waste categories
-        return view('inputWeight', compact('wasteRequestID', 'categories'));
+
+        // Ambil data WasteRequest berdasarkan ID
+        $wasteRequest = WasteRequest::findOrFail($wasteRequestID);
+
+        // Ambil kategori sampah
+        $categories = WasteCategory::all();
+
+        // Kirimkan data ke view
+        return view('inputWeight', compact('wasteRequest', 'categories', 'wasteRequestID'));
     }
 
     public function storeData(Request $request)
@@ -98,7 +105,8 @@ class TrashController extends Controller
             ]);
         }
 
+        //dd($categories);
         // Redirect ke route homeUser setelah data berhasil disimpan
-        return redirect()->route('home.homeUser')->with('success', 'Data berhasil disimpan');
+        return redirect()->route('home.homeUser')->with('success', 'Data Sent Successfully.');
     }
 }

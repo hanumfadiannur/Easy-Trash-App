@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\RewardController;
 use App\Http\Controllers\TrashController;
 use Illuminate\Support\Facades\Route;
 
@@ -37,5 +38,15 @@ Route::group(['prefix' => 'account'], function () {
         Route::post('/createwasterequest', [TrashController::class, 'createWasteRequest'])->name('createwasterequest');
         Route::get('/input-weight', [TrashController::class, 'inputWeight'])->name('inputWeight');
         Route::post('/waste/store', [TrashController::class, 'storeData'])->name('storeData');
+        Route::get('notification-request', [AccountController::class, 'notificationRequest'])->name('account.notificationRequest');
+        Route::get('/notification-request/{id}', [AccountController::class, 'showNotificationRequest'])->name('account.notificationRequest2');
+        Route::post('/notification-request/{id}/update-status', [AccountController::class, 'updateStatusRequest'])->name('account.notificationRequest.update');
+
+        Route::get('/reward-and-points', [RewardController::class, 'rewardAndPoint'])->name('pointReward.pointReward');
+        Route::post('/redeem-reward', [RewardController::class, 'redeemReward'])->name('reward.redeem');
+        Route::get('/reward/transaction/{transaction}', [RewardController::class, 'transactionDetail'])->name('pointReward.transactionDetail');
+
+        Route::get('notification-report', [AccountController::class, 'notificationReport'])->name('account.notificationReport');
+        Route::get('/notification-report-request/{id}', [AccountController::class, 'showNotificationRequestReport'])->name('account.notificationReport2');
     });
 });

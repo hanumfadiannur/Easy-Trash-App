@@ -17,7 +17,7 @@
         <img src="{{ asset('images/ellipse-green-3-5.svg') }}" alt="Deskripsi Gambar" class="ellipse-green-3-5">
         <h2 class="text-2">Selamat Datang</h2>
     </div>
-    <div class="trash">
+    <div class="trashLogo">
         <img src="{{ asset('images/trash.svg') }}" alt="Deskripsi Gambar">
     </div>
 

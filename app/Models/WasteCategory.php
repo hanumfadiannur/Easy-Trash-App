@@ -20,4 +20,11 @@ class wasteCategory extends Model
     {
         return $this->hasMany(CategoryWasteData::class, 'categoryID');
     }
+
+    // Relationship to waste requests
+    public function wasteRequests()
+    {
+        return $this->belongsToMany(WasteRequest::class, 'category_waste_data', 'categoryID', 'wasteDataID')
+            ->withPivot('weight');  // Include weight data from the pivot table
+    }
 }

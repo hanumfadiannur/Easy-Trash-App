@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+#map {
+    z-index: 1;
+}
+
 
 body {
     font-family: var(--font-family-poppins);
@@ -22,10 +26,10 @@ body {
 }
 
 
-.page-signup-user-1 {
+.page-sign-user-1 {
     position: relative;
-    width: 100%;
-    max-width: 300px; /* Lebar maksimum lebih kecil */
+    width: 90%;
+    max-width: 48vb; /* Lebar maksimum lebih kecil */
     margin-top: 180px; /* Mengatur jarak dari atas */
 
 }
@@ -39,29 +43,30 @@ body {
 }
 
 .text-2 {
-    font-size: 24px; /* Ukuran font judul lebih kecil */
+    font-size: 4vb; /* Ukuran font judul lebih kecil */
     font-weight: bold;
     color: #ffffff;
-    margin-top: 70px;
-    margin-left: 20px;
+    margin-top: 9vh;
+    margin-left: 2vw;
 }
 
 .rectangle {
-    position: absolute; /* Tetap di sini */
-    left: 0; /* Pastikan rectangle mengisi lebar dari kiri */
-    margin-top: 80px;
+    position: absolute;
+    left: 0;
+    margin-top: 10vh; /* Jarak dari atas berdasarkan tinggi layar */
     width: 100%; /* Lebar penuh */
-    height: 130px; /* Tinggi rectangle */
-    background-color: rgba(78, 175, 91, 1); /* Warna rectangle */
-    border-radius: 15px; /* Sudut melingkar */
-    z-index: 1; /* Agar rectangle selalu di atas elemen lain */
+    height: 15vh; /* Tinggi responsif berdasarkan viewport height */
+    background-color: rgba(78, 175, 91, 1);
+    border-radius: 2vw; /* Sudut melingkar responsif */
+    z-index: 1;
 }
+
 
 .ellipse-blue-1-4 {
     position: absolute;
     left: 80%; /* Menggunakan persentase untuk responsivitas */
-    top: 30%;  /* Menentukan posisi vertikal */
-    width: auto;
+    top: 35%;  /* Menentukan posisi vertikal */
+    width: 20vh;
     height: auto;
     transform: translate(-50%, -50%); /* Memusatkan elemen */
 }
@@ -69,8 +74,8 @@ body {
 .ellipse-blue-2-6 {
     position: absolute;
     left: 60%; /* Menggunakan persentase untuk responsivitas */
-    top: 70%;  /* Menentukan posisi vertikal */
-    width: auto;
+    top: 65%;  /* Menentukan posisi vertikal */
+    width: 20vh;
     height: auto;
     transform: translate(-50%, -50%); /* Memusatkan elemen */
 }
@@ -78,8 +83,8 @@ body {
 .ellipse-blue-3-5 {
     position: absolute;
     left: 40%; /* Menggunakan persentase untuk responsivitas */
-    top: 30%;  /* Menentukan posisi vertikal */
-    width: auto;
+    top: 35%;  /* Menentukan posisi vertikal */
+    width: 20vh;
     height: auto;
     transform: translate(-50%, -50%); /* Memusatkan elemen */
 }
@@ -87,8 +92,8 @@ body {
 .ellipse-green-1-4 {
     position: absolute;
     left: 80%; /* Menggunakan persentase untuk responsivitas */
-    top: 30%;  /* Menentukan posisi vertikal */
-    width: auto;
+    top: 35%;  /* Menentukan posisi vertikal */
+    width: 20vh;
     height: auto;
     transform: translate(-50%, -50%); /* Memusatkan elemen */
 }
@@ -96,8 +101,8 @@ body {
 .ellipse-green-2-6 {
     position: absolute;
     left: 60%; /* Menggunakan persentase untuk responsivitas */
-    top: 70%;  /* Menentukan posisi vertikal */
-    width: auto;
+    top: 65%;  /* Menentukan posisi vertikal */
+    width: 20vh;
     height: auto;
     transform: translate(-50%, -50%); /* Memusatkan elemen */
 }
@@ -105,35 +110,34 @@ body {
 .ellipse-green-3-5 {
     position: absolute;
     left: 40%; /* Menggunakan persentase untuk responsivitas */
-    top: 30%;  /* Menentukan posisi vertikal */
-    width: auto;
+    top: 35%;  /* Menentukan posisi vertikal */
+    width: 20vh;
     height: auto;
     transform: translate(-50%, -50%); /* Memusatkan elemen */
 }
 
-.trash {
-    position: absolute;
-    left: 5%; /* Mengatur jarak dari sisi kiri */
-    top: calc(169px + 2vw); /* Menempatkan di bawah rectangle */
-    width: 8%; /* Mengatur lebar gambar menjadi 8% dari lebar jendela */
-    height: auto; /* Tinggi otomatis untuk menjaga proporsi */
-    max-width: 50px; /* Batas maksimum lebar gambar */
-}
 
 .container {
-    display: flex; /* Menggunakan Flexbox untuk penyelarasan */
-    align-items: center; /* Pusatkan elemen secara vertikal */
-    justify-content: flex-start; /* Memindahkan elemen ke kiri */
-    height: 100vh; /* Tinggi kontainer sesuai tinggi jendela */
-    padding-left: 20px; /* Menambahkan padding kiri jika perlu untuk memberi jarak dari tepi */
+    display: flex;
+    flex-direction: column; /* Susun elemen secara vertikal */
+    align-items: center; /* Pusatkan elemen secara horizontal */
+    justify-content: center; /* Pusatkan elemen secara vertikal */
+    gap: 2vh; /* Jarak antar elemen fleksibel */
+    width: 70vw; /* Lebar kontainer responsif */
+    margin-top: 50vh; /* Jarak atas responsif */
 }
 
-.trashLogo {
-    width: 80%; /* Mengatur lebar gambar menjadi 80% dari lebar kontainer */
+
+.trashLogo img{
+    position: absolute;
+    left: 10vh; /* Jarak dari sisi kiri */
+    top: calc(40vh + 2vw); /* Posisi vertikal responsif */
+    width: 45vw; /* Lebar responsif lebih kecil */
     height: auto; /* Tinggi otomatis untuk menjaga proporsi */
-    max-width: 350px; /* Batas maksimum lebar gambar */
-    margin-right: 50px; /* Jarak di sebelah kanan gambar */
+    z-index: -1;
 }
+
+
 
 .trashText {
     width: auto; /* Mengatur lebar teks menjadi otomatis */
@@ -142,15 +146,20 @@ body {
     height: auto; /* Tinggi otomatis untuk menjaga proporsi */
 }
 
-
+.form-control {
+    width: 40vb;
+    height: 4vh;
+    border-radius: 15px;
+    font-family: var(--font-family-poppins);
+}
 
 .form-container {
     background-color: rgba(218, 252, 218, 1); /* Warna latar belakang form */
     border-radius: 15px; /* Sudut melingkar */
     padding: 15px; /* Padding di dalam form */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk form */
-    margin-top: 100px; /* Jarak antara rectangle dan form */
-    margin-right: 20px;
+    margin-top: 30vh; /* Jarak antara rectangle dan form */
+    margin-right: 2vw;
     margin-bottom: 20px;
     z-index: 0; /* Agar form berada di bawah rectangle */
 }
@@ -184,42 +193,36 @@ input {
     background-color: rgba(35, 59, 69, 1);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     cursor: pointer;
-    font-size: 12px; /* Ukuran font button lebih kecil */
+    height: 5vh;
+    font-size: 16px; /* Ukuran font button lebih kecil */
 }
 
 .submit-btn:hover {
-    background-color: rgba(50, 70, 80, 1);
+    background-color: rgb(63, 79, 87);
 }
 
-.frame-3-4 {
+.frame-3-4, .frame-6-5 {
+    left: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 25px 30px;
+    gap: 2vw; /* Jarak antar elemen proporsional */
+    padding: 3vh 5vw; /* Padding fleksibel berdasarkan viewport */
     flex-grow: 0;
-    width: 40%;
-    background-color: rgba(78, 175, 91, 1);
-    border-radius: 20px;
+    width: 40vw; /* Lebar responsif berdasarkan lebar layar */
+    background-color: rgba(78, 175, 91, 1); /* Untuk .frame-3-4 */
+    border: 2px solid rgba(78, 175, 91, 1); /* Untuk .frame-6-5 */
+    border-radius: 3vw; /* Radius sudut responsif */
     position: relative;
 }
 
+/* Untuk .frame-6-5 */
 .frame-6-5 {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 25px 30px;
-    flex-grow: 0;
-    width: 40%;
     background-color: rgba(255, 255, 255, 1);
     border: 2px solid rgba(78, 175, 91, 1);
-    border-radius: 20px;
-    position: relative;
 }
 
 
@@ -228,13 +231,14 @@ input {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 495px;
-    height: 59px;
-    font-size: 32px;
+    width: 40vw;
+    height: 6vh;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
     text-align: center;
     color: rgba(52, 159, 66, 1);
+    font-size: 24px;
+
 }
 
 .text-7 {
@@ -242,21 +246,15 @@ input {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 40%;
-    height: 59px;
-    font-size: 32px;
+    width: 40vw;
+    height: 6vh;
     font-family: 'Poppins', sans-serif;
     font-weight: normal;
     text-align: center;
     color: rgb(255, 255, 255);
+    font-size: 24px;
 }
 
-.container {
-    text-align: center;
-    width: 80%;
-    max-width: 60%;
-    flex-direction: column;
-    gap: 15px;
-    margin-top: 30%;
-}
+
+
 

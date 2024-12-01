@@ -7,7 +7,7 @@
 
 
 .container2 {
-    max-width: 700px;
+    max-width: 40vw;
     margin: 50px auto;
     padding: 0 0;
 }
@@ -16,35 +16,47 @@ h2 {
     font-size: 32px !important;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-top: 2vh !important;
+    color: #2c3e50;
+    margin-left: 2vh !important;
 }
 
 
 .card {
     background-color: #D8EBBF;
     border-radius: 20px;
-    padding: 70px;
-    width: 700px;
+    padding: 6vw 5vw;
+    width: 45vw;
 }
 
 
 .input-container {
     background-color: #A4F3A4;
     border-radius: 8px;
-    padding: 20px;
-    z-index: -1;
+    padding: 1vw;
+    width: 35vw;
 }
 
 .input-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.input-row > div:first-child {
+    white-space: nowrap; /* Menjaga teks tetap dalam satu baris */
+    flex-grow: 1; /* Membuat teks mengisi ruang yang tersedia */
+    margin-right: 10px; /* Memberikan jarak antara teks dan input-group */
+    font-weight: bold;
 }
 
 .input-group {
     display: flex;
     align-items: center;
-    gap: 10px;
+    margin: 5px 0;
+    justify-content: flex-end; /* Pastikan konten dimulai dari kiri */
 }
 
 .btn {
@@ -55,17 +67,14 @@ h2 {
 }
 
 .btn img {
-    width: 20px;
-    height: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
 .value {
     font-weight: bold;
-    width: 30px;
+    width: 1.5rem;
     text-align: center;
-
-    margin: 5px auto;
-
 }
 
 .total-row {
@@ -81,15 +90,16 @@ h2 {
     background-color: #4EAF5B;
     color: white;
     border: none;
-    padding: 10px 100px;
+    padding: 1vh 9vw;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 2vh;
     float: right;
+
 }
 
 .send-btn:hover {
-    background-color: #388E3C;
+    background-color: #1b8520;
 }
 
 

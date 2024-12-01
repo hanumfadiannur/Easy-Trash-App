@@ -8,12 +8,11 @@
     <form action="{{ route('storeData') }}" method="POST">
         @csrf
         <div class="container2">
-            <h2><strong>Input Weight</strong></h2>
-
+            <h2>Input Weight</h2>
             <div class="card">
                 <div class="user-profile">
                     <div class="avatar"></div>
-                    <div>Username</div>
+                    <div>Request for, <strong>{{ $wasteRequest->recycleOrg->name }}</strong></div>
                 </div>
 
                 <div class="input-container">

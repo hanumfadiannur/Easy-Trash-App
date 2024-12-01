@@ -21,10 +21,10 @@
         <img src="{{ asset('images/ellipse-3-5.svg') }}" alt="Deskripsi Gambar" class="ellipse-blue-3-5">
         <h2 class="text-2">Sign Up</h2>
     </div>
-    <div class="trash">
+    <div class="trashLogo">
         <img src="{{ asset('images/trash.svg') }}" alt="Deskripsi Gambar">
     </div>
-    <div class="page-signup-user-1">
+    <div class="page-sign-user-1">
         <div class="form-container">
             <h3 class="text-3"><strong>Sign Up</strong></h3>
             <form action="{{ route('account.processRegister') }}" method="post">
@@ -78,14 +78,14 @@
 
                 <div>
                     <label for="location">Lokasi:</label>
-                    <input type="text" id="location" name="location" required readonly>
+                    <input type="text" id="location" class="form-control" name="location" required readonly>
                     <input type="hidden" id="latitude" name="latitude" value="">
                     <input type="hidden" id="longitude" name="longitude" value="">
 
                 </div>
 
                 <!-- Tempat untuk menampilkan peta -->
-                <div id="map" style="height: 400px;"></div>
+                <div id="map" style="height: 40vh;"></div>
 
                 <!-- Password Field -->
                 <div class="form-group">

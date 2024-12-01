@@ -19,8 +19,10 @@
                 </div>
                 @if (auth()->user()->role == 'recycleorg')
                     <div class="menu-item" id="menu-profile">
-                        <span class="material-symbols-rounded">notifications</span>
-                        <span class="menu-item-text">Notification Request</span>
+                        <a href="{{ route('account.notificationRequest') }}" class="flex items-center">
+                            <span class="material-symbols-rounded">notifications</span>
+                            <span class="menu-item-text">Notification Request</span>
+                        </a>
                     </div>
                     <div class="menu-item" id="menu-profile">
                         <span class="material-symbols-rounded">history</span>
@@ -28,12 +30,16 @@
                     </div>
                 @else
                     <div class="menu-item" id="menu-profile">
-                        <span class="material-symbols-rounded">notifications</span>
-                        <span class="menu-item-text">Notification Report</span>
+                        <a href="{{ route('account.notificationReport') }}" class="flex items-center">
+                            <span class="material-symbols-rounded">notifications</span>
+                            <span class="menu-item-text">Notification Report</span>
+                        </a>
                     </div>
                     <div class="menu-item" id="menu-profile">
                         <img src="{{ asset('images/Cup.svg') }}" alt="Cup Icon" class="menu-icon">
-                        <span class="menu-item-text">Poin and Reward</span>
+                        <a href="{{ route('pointReward.pointReward') }}" class="flex items-center">
+                            <span class="menu-item-text">Points and Reward</span>
+                        </a>
                     </div>
                 @endif
             @endif

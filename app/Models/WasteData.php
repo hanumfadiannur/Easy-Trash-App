@@ -35,4 +35,10 @@ class WasteData extends Model
     {
         return $this->hasMany(CategoryWasteData::class, 'wasteDataID');
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(WasteCategory::class, 'category_waste_data', 'wasteDataID', 'categoryID')
+            ->withPivot('weight');
+    }
 }

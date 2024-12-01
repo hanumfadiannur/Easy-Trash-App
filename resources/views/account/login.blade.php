@@ -7,20 +7,22 @@
     <title>Sign In</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 
 <body>
+    @include('layouts.message')
     <div class="rectangle">
         <img src="{{ asset('images/ellipse-green-1-4.svg') }}" alt="Deskripsi Gambar" class="ellipse-green-1-4">
         <img src="{{ asset('images/ellipse-green-2-6.svg') }}" alt="Deskripsi Gambar" class="ellipse-green-2-6">
         <img src="{{ asset('images/ellipse-green-3-5.svg') }}" alt="Deskripsi Gambar" class="ellipse-green-3-5">
         <h2 class="text-2">Sign In</h2>
     </div>
-    <div class="trash">
+    <div class="trashLogo">
         <img src="{{ asset('images/trash.svg') }}" alt="Deskripsi Gambar">
     </div>
-    <div class="page-signup-user-1">
+    <div class="page-sign-user-1">
         <div class="form-container">
             <h3 class="text-3"><strong>Sign In</strong></h3>
             <form action="{{ route('account.authenticate') }}" method="post">

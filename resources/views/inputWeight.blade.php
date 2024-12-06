@@ -7,7 +7,7 @@
 @section('content')
     <form action="{{ route('storeData') }}" method="POST">
         @csrf
-        <div class="container2">
+        <div class="container3">
             <h2>Input Weight</h2>
             <div class="card">
                 <div class="user-profile">

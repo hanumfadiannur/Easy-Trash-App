@@ -124,7 +124,7 @@ body {
     justify-content: center; /* Pusatkan elemen secara vertikal */
     gap: 2vh; /* Jarak antar elemen fleksibel */
     width: 70vw; /* Lebar kontainer responsif */
-    margin-top: 50vh; /* Jarak atas responsif */
+    margin-top: 60vh; /* Jarak atas responsif */
 }
 
 
@@ -158,8 +158,8 @@ body {
     border-radius: 15px; /* Sudut melingkar */
     padding: 15px; /* Padding di dalam form */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk form */
-    margin-top: 30vh; /* Jarak antara rectangle dan form */
-    margin-right: 2vw;
+    margin-top: 20vh; /* Jarak antara rectangle dan form */
+    margin-right: 1vw;
     margin-bottom: 20px;
     z-index: 0; /* Agar form berada di bawah rectangle */
 }
@@ -212,7 +212,7 @@ input {
     gap: 2vw; /* Jarak antar elemen proporsional */
     padding: 3vh 5vw; /* Padding fleksibel berdasarkan viewport */
     flex-grow: 0;
-    width: 40vw; /* Lebar responsif berdasarkan lebar layar */
+    width: 25vw; /* Lebar responsif berdasarkan lebar layar */
     background-color: rgba(78, 175, 91, 1); /* Untuk .frame-3-4 */
     border: 2px solid rgba(78, 175, 91, 1); /* Untuk .frame-6-5 */
     border-radius: 3vw; /* Radius sudut responsif */

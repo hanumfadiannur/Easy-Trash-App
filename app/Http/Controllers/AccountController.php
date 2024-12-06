@@ -7,6 +7,7 @@ use App\Models\MapsUser;
 use App\Models\User;
 use App\Models\WasteData;
 use App\Models\wasteRequest;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -248,6 +249,11 @@ class AccountController extends Controller
         // Perbarui status permintaan
         $wasteRequest->status = $request->status;
 
+        // Jika statusnya "accepted", perbarui expiryDate menjadi 2 hari dari sekarang
+        if ($request->status === 'accepted') {
+            $wasteRequest->expiryDate = Carbon::now()->addDays(2);
+        }
+
         // Jika statusnya "done", tambahkan poin ke user berdasarkan data waste_data
         if ($request->status === 'done') {
             // Menambahkan poin ke waste_data terkait dengan permintaan ini
@@ -306,5 +312,31 @@ class AccountController extends Controller
         $request->total_weight = $totalWeight;
 
         return view('account.notificationReport2', compact('request'));
+    }
+
+
+    public function riwayatRecycling()
+    {
+        // Mendapatkan ID recycleorg yang sedang login
+        $recycleorgID = Auth::id();
+
+        // Ambil permintaan yang statusnya 'done' dan terkait dengan recycleorg yang login
+        $requests = WasteRequest::where('recycleorgID', $recycleorgID) // Permintaan untuk recycleorg yang login
+            ->where('status', 'done')  // Hanya ambil status 'done'
+            ->with(['user', 'categories']) // Relasi user dan kategori
+            ->get();
+
+        // Menghitung total berat untuk setiap request
+        $requests->each(function ($request) {
+            $totalWeight = $request->categories->sum(function ($category) {
+                return $category->pivot->weight; // Asumsikan weight ada di pivot table
+            });
+
+            // Menambahkan total_weight ke setiap request
+            $request->total_weight = $totalWeight;
+        });
+
+        // Kirim data permintaan ke tampilan
+        return view('account.riwayatRecycling', compact('requests'));
     }
 }

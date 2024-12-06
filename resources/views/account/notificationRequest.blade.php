@@ -22,13 +22,13 @@
 
 @section('content')
     <div>
-        <div class="container2">
+        <div class="container4">
             <h2>Notification Request</h2>
             <br>
             @if ($requests->isEmpty())
                 <div class="no-requests">
-                    <p>Maaf, saat ini tidak ada request yang masuk.</p>
-                    <p class="note">Coba lagi nanti atau periksa kembali sistem.</p>
+                    <p>Sorry, there are currently no incoming requests.</p>
+                    <p class="note">Try again later or check the system again.</p>
                 </div>
             @else
                 @foreach ($requests as $request)

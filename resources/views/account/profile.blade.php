@@ -48,13 +48,6 @@
                             value="{{ old('latitude', $mapData->latitude ?? '') }}">
                         <input type="hidden" id="longitude" name="longitude"
                             value="{{ old('longitude', $mapData->longitude ?? '') }}">
-
-                        {{-- Menampilkan Data Latitude, Longitude, dan Address --}}
-                        <div class="map-data-display">
-                            <p><strong>Latitude:</strong> {{ $mapData->latitude ?? 'Not available' }}</p>
-                            <p><strong>Longitude:</strong> {{ $mapData->longitude ?? 'Not available' }}</p>
-                            <p><strong>Address:</strong> {{ $mapData->address ?? 'Not available' }}</p>
-                        </div>
                     </div>
                     <div id="map" style="height: 400px;"></div>
                     <div class="buttons">

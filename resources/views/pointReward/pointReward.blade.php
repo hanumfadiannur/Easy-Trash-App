@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <h2>Reward & Poin</h2>
+    <h2>Reward and Point</h2>
 
     <!-- Menampilkan Poin Pengguna -->
     <div class="points">
@@ -17,11 +17,13 @@
                 <p>{{ $user->points }}</p>
             </div>
             <!-- Grup kedua -->
-            <div class="item">
-                <img src="{{ asset('images/Trophy Cup.png') }}" alt="Trophy Icon">
-                <p>Your Rewards</p>
-                <p>{{ $redeemedCount }}</p>
-            </div>
+            <a href="{{ route('pointReward.yourReward') }}" class="flex items-center">
+                <div class="item">
+                    <img src="{{ asset('images/Trophy Cup.png') }}" alt="Trophy Icon">
+                    <p style="text-decoration: underline; text-decoration-color: rgb(37, 37, 157);">Your Rewards</p>
+                    <p>{{ $redeemedCount }}</p>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -125,14 +127,14 @@
                         'X-CSRF-TOKEN': '{{ csrf_token() }}'
                     },
                     data: $("#rewardRedeemForm{{ $reward->id }}").serialize(),
-                    success: function(response) {
-                        if (response.status == true) {
-                            alert("Reward successfully redeemed!");
-                            window.location.reload();
-                        } else {
-                            alert("You don't have enough points to redeem this reward.");
-                        }
-                    }
+                    // success: function(response) {
+                    //     if (response.status == true) {
+                    //         alert("Reward successfully redeemed!");
+                    //         window.location.reload();
+                    //     } else {
+                    //         alert("You don't have enough points to redeem this reward.");
+                    //     }
+                    // }
                 });
             });
         @endforeach

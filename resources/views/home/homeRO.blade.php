@@ -158,23 +158,4 @@
             </div>
         </section>
     </main>
-    <footer class="bg-green-600 p-4 mt-12 text-white text-center">
-        <p>
-            © 2023 Recycling Initiative. All rights reserved.
-        </p>
-        <div class="mt-2">
-            <a class="text-white hover:text-gray-300 transition-colors mx-2" href="#">
-                <i class="fab fa-facebook-f">
-                </i>
-            </a>
-            <a class="text-white hover:text-gray-300 transition-colors mx-2" href="#">
-                <i class="fab fa-twitter">
-                </i>
-            </a>
-            <a class="text-white hover:text-gray-300 transition-colors mx-2" href="#">
-                <i class="fab fa-instagram">
-                </i>
-            </a>
-        </div>
-    </footer>
 @endsection

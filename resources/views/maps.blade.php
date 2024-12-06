@@ -2,12 +2,6 @@
 
 @section('style')
     <style>
-        #map {
-            top: 2vh;
-            height: 80vh;
-            width: 200vw;
-        }
-
         .organization-card.highlight {
             border: 2px solid green;
             /* Menambahkan stroke hijau */
@@ -48,18 +42,19 @@
 @endsection
 
 @section('content')
-    <div class="container">
+    <div class="container2">
         <!-- Left side: search and organization list -->
         <div class="left-side">
             <div class="search-container">
                 <div class="org-icon">
                     {{-- <img src="{{ asset('images/Ellipse48.svg') }}" alt="Organization Icon"> --}}
                     <div class="search-box">
-                        <label for="start-location">Titik Awal:</label>
+                        <label for="start-location">Lokasi Anda:</label>
                         <input type="text" class="search-input" id="start-location"
-                            value="{{ old('location', $user->location) }}" placeholder="Pilih titik awal..." readonly />
+                            value="{{ old('location', $user->location) }}" readonly />
                     </div>
                     <div class="search-box">
+                        <p style="color: red;">Klik marker hijau pada maps, untuk memilih Recycling Organization.</p>
                         <label for="end-location">Tujuan:</label>
                         <input type="text" class="search-input" id="end-location" placeholder="Pilih tujuan...">
                     </div>
@@ -85,7 +80,8 @@
         </div>
 
         <!-- Map on the right side -->
-        <div id="map"></div>
+        <div id="map">
+        </div>
     </div>
 
 
@@ -96,9 +92,6 @@
     </form>
 
     <button class="next-button" id="nextButton">Next</button>
-
-
-    <button class="back-button">←</button>
 @endsection
 
 @section('script')

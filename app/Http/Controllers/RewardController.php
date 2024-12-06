@@ -37,12 +37,12 @@ class RewardController extends Controller
 
         // Cek apakah user memiliki cukup poin
         if ($user->points < $reward->points_required) {
-            return redirect()->back()->with('error', 'Poin tidak cukup untuk menukar reward ini.'); // Tampilkan pesan error
+            return redirect()->back()->with('error', 'You dont have enough points to redeem this reward.'); // Tampilkan pesan error
         }
 
         // Cek stok reward
         if ($reward->stock <= 0) {
-            return redirect()->back()->with('error', 'Stok reward tidak tersedia.'); // Tampilkan pesan error
+            return redirect()->back()->with('error', 'Reward stock is not available.'); // Tampilkan pesan error
         }
 
         // Kurangi poin user
@@ -71,5 +71,23 @@ class RewardController extends Controller
 
         // Kirim data transaksi ke view
         return view('pointReward.transactionDetail', compact('transaction'));
+    }
+
+    public function yourReward()
+    {
+        $user = User::find(Auth::user()->id);
+        $rewards = Reward::all(); // Ambil semua reward dari tabel rewards
+
+        $redeemedRewards = $user->rewardTransactions()->with('reward')->get(); // Reward yang sudah ditukar
+
+        // Hitung total reward yang telah ditukar oleh user
+        $redeemedCount = $redeemedRewards->count();
+
+        return view('pointReward.yourReward', [
+            'user' => $user,
+            'rewards' => $rewards,
+            'redeemedRewards' => $redeemedRewards,
+            'redeemedCount' => $redeemedCount, // Tambahkan jumlah reward yang telah ditukar
+        ]);
     }
 }

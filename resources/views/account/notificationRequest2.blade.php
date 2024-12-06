@@ -12,6 +12,7 @@
             cursor: not-allowed;
             opacity: 0.7;
             text-transform: capitalize;
+            border-radius: 30px;
             /* Kapitalisasi status (accepted/rejected) */
         }
 
@@ -83,13 +84,13 @@
                             <span>{{ $request->status }}</span>
                         @endif
                     </p>
-                    <p><strong>Expiry Date: </strong>
-                        @if ($request->status === 'accepted')
+                    @if ($request->status === 'accepted')
+                        <p><strong>Expiry Date: </strong>
                             <span style="color: #44B1FF; font-weight: bold;">
                                 {{ \Carbon\Carbon::parse($request->expiryDate)->format('l, d F Y') }}
                             </span>
-                        @endif
-                    </p>
+                        </p>
+                    @endif
                 @endif
             </div>
 

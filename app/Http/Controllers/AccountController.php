@@ -234,6 +234,7 @@ class AccountController extends Controller
         return view('account.notificationRequest2', compact('request'));
     }
 
+    // method paling rumit
     // Memperbarui status permintaan (accept, reject, atau done)
     public function updateStatusRequest(Request $request, $id)
     {

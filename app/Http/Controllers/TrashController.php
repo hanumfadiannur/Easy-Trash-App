@@ -68,6 +68,7 @@ class TrashController extends Controller
         return view('inputWeight', compact('wasteRequest', 'categories', 'wasteRequestID'));
     }
 
+
     public function storeData(Request $request)
     {
         // Ambil data dari form
@@ -105,7 +106,7 @@ class TrashController extends Controller
             ]);
         }
 
-        //dd($categories);
+
         // Redirect ke route homeUser setelah data berhasil disimpan
         return redirect()->route('home.homeUser')->with('success', 'Data Sent Successfully.');
     }

@@ -66,6 +66,12 @@
                 <button type="submit" class="submit-btn">Sign In</button>
             </form>
         </div>
+        <a href="{{ route('account.register') }}"
+            style="color: black; text-decoration: underline; display: block; text-align: center;">Sign up if you don't
+            have an account</a>
+
+
+
 </body>
 
 </html>
